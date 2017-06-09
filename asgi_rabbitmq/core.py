@@ -379,6 +379,7 @@ class Protocol(object):
             declare_queue,
             exchange=self.dead_letters,
             exchange_type='fanout',
+            auto_delete=True,
         )
 
     def on_dead_letter(self, amqp_channel, method_frame, properties, body):
